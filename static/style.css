@@ -1,6 +1,7 @@
 body {
     padding-top: 70px;
     align-items: center;
+    background-color: pink;
 }
 
 #board {
