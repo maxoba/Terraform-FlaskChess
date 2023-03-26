@@ -30,5 +30,3 @@ jobs:
         key: ${{ secrets.VM_PRIVATE_KEY }}
         script:
           cd /home/ubuntu/FlaskChess
-          git pull origin master
-          sudo systemctl restart gunicorn.service
