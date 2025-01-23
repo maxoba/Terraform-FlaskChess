@@ -11,6 +11,12 @@ resource "aws_instance" "FlaskChess-1" {
     Name = "FlaskChess-1"
   }
 }
+resource "time_sleep" "wait_for_instance" {
+  create_duration = "180s"
+
+  depends_on = [aws_instance.FlaskChess-1]
+}
+
 
 
 resource "aws_security_group" "allow_ssh_http" {
