@@ -30,6 +30,14 @@ jobs:
         username: ${{ secrets.VM_USERNAME }}
         key: ${{ secrets.VM_PRIVATE_KEY }}
         script: |
-          cd /home/ubuntu/FlaskChess
-          git pull origin main
-          sudo systemctl restart gunicorn.service
+         set -ex
+          if [ ! -d "/home/ubuntu/FlaskChess" ]; then
+          echo "Cloning repository..."
+          git clone https://github.com/maxoba/Terraform-FlaskChess.git /home/ubuntu/FlaskChess
+          fi
+         cd /home/ubuntu/FlaskChess
+         echo "Pulling latest changes..."
+         git pull origin main
+         echo "Restarting Gunicorn service..."
+         sudo systemctl restart gunicorn.service
+
