@@ -35,9 +35,11 @@ jobs:
           echo "Cloning repository..."
           git clone https://github.com/maxoba/Terraform-FlaskChess.git /home/ubuntu/FlaskChess
           fi
-         cd /home/ubuntu/FlaskChess
-         echo "Pulling latest changes..."
-         git pull origin main
-         echo "Restarting Gunicorn service..."
-         sudo systemctl restart gunicorn.service
+          cd /home/ubuntu/FlaskChess
+          echo "Pulling latest changes..."
+          git pull origin main
+          echo "Restarting Gunicorn service..."
+          sudo systemctl restart gunicorn.service
+          echo "Checking Gunicorn service status..."
+          sudo systemctl status gunicorn.service
 
