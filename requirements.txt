@@ -1,3 +1,4 @@
 flask
 python-chess[uci,gaviota]
 gunicorn
+pytyest
