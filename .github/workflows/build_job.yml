@@ -2,9 +2,9 @@ name: Flask CI/CD Workflow
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -31,5 +31,5 @@ jobs:
         key: ${{ secrets.VM_PRIVATE_KEY }}
         script: |
           cd /home/ubuntu/FlaskChess
-          git pull origin master
+          git push origin master
           sudo systemctl restart gunicorn.service
