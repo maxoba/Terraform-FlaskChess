@@ -1,5 +1,3 @@
-
-
 resource "aws_instance" "FlaskChess-1" {
   ami           = "ami-05d38da78ce859165" # Replace with a valid AMI ID
   instance_type = var.my_instance         # Correct reference to the variable
@@ -16,8 +14,6 @@ resource "time_sleep" "wait_for_instance" {
 
   depends_on = [aws_instance.FlaskChess-1]
 }
-
-
 
 resource "aws_security_group" "allow_ssh_http" {
   name        = "allow_ssh_http"
