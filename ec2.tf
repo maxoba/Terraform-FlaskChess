@@ -16,7 +16,7 @@ resource "time_sleep" "wait_for_instance" {
 }
 
 resource "aws_security_group" "allow_ssh_http" {
-  name        = "allow_ssh_http"
+  name        = "allow_ssh_http_new"
   description = "Allow SSH and HTTP traffic"
   vpc_id      = "vpc-0293333d27a5d4165"
 
