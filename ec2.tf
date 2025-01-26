@@ -41,11 +41,4 @@ resource "aws_security_group" "allow_ssh_http" {
   }
 }
 
-terraform {
-  backend "s3" {
-    bucket = "maxoba1"
-    key = "github-action/terraform.tfstate"
-    region = "us-west-2"
-    
-  }
-}
+
