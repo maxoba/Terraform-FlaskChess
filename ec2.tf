@@ -40,3 +40,12 @@ resource "aws_security_group" "allow_ssh_http" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+terraform {
+  backend "s3" {
+    bucket = "maxoba1"
+    key = "github-action/terraform.tfstate"
+    region = "us-west-2"
+    
+  }
+}
