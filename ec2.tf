@@ -16,7 +16,7 @@ resource "time_sleep" "wait_for_instance" {
 }
 
 resource "aws_security_group" "allow_ssh_http" {
-  name        = "allow_ssh_http "
+  name        = "allow_ssh_http new "
   description = "Allow SSH and HTTP traffic"
 
   ingress {
