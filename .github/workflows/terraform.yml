@@ -1,0 +1,16 @@
+name: terraform.yml
+
+on: [push, pull_request] 
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo "Running terraform"
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Install terraform
+        uses: hashicorp/setup-terraform@v3
+      - name: init
+        run: terraform init      
