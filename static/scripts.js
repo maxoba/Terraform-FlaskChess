@@ -1,5 +1,3 @@
-var playerWhite = "John"; // change from Precious
-var playerBlack = "ken";
 
 
 var board,
