@@ -21,6 +21,6 @@ jobs:
          terraform fmt -recursive 
       - name: plan
         run:  terraform plan
-      - name: apply
+      - name: destroy
         run: terraform destroy-auto-approve  
                 
