@@ -10,7 +10,7 @@ resource "aws_instance" "FlaskChess-1" {
   }
 }
 resource "time_sleep" "wait_for_instance" {
-  create_duration = "180s"
+  create_duration = "240s"
 
   depends_on = [aws_instance.FlaskChess-1]
 }
@@ -39,6 +39,22 @@ resource "aws_security_group" "allow_ssh_http" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
+  tags = {
+    Name = "allow_ssh_http"
+  }
 }
 
+terraform {
+  backend "s3" {
+    bucket = "maxomo1"
+    key = "chess/terraform.tfstate"
+    region = "us-west-2"
+    
+  }
+}
 
